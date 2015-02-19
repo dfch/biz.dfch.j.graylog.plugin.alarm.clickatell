@@ -1,4 +1,4 @@
-d-fens biz.dfch.j.graylog.plugin.output.clickatell Graylog Output Plugin
+d-fens biz.dfch.j.graylog.plugin.alarm.clickatell Graylog AlarmCallback Plugin
 
 Copyright 2015 d-fens GmbH
 
