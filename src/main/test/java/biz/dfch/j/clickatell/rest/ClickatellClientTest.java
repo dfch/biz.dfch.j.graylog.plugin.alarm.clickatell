@@ -30,7 +30,7 @@ public class ClickatellClientTest
     public void Before()
     {
         System.out.println("Before");
-        authToken = "CLICKATELL-REST-API-KEY";
+        authToken = "CLICKATELL-REST-API-KEY-AUTH-TOKEN";
     }
 
     @Test
