@@ -9,7 +9,7 @@ This Graylog AlarmCallback Plugin lets you send custom formatted short messages 
 
 See [Graylog Clickatell AlarmCallback Plugin for Graylog v1.0.0](http://d-fens.ch/tag/graylog2/) and [Creating a Graylog Output Plugin](http://d-fens.ch/2015/01/07/howto-creating-a-graylog-output-plugin/) (v0.92.x) for further description on how to create plugins.
 
-For your information: your build will FAIL the tests unless you specify a valid [API key](https://github.com/dfch/biz.dfch.j.graylog.plugin.alarm.clickatell/blob/f9d4d96543de16c56d18441c5fb87b60f333c3b1/src/test/java/biz/dfch/j/clickatell/rest/ClickatellClientTest.java#L33).
+For your information: your build will FAIL the tests unless you specify a valid [API key](https://github.com/dfch/biz.dfch.j.graylog.plugin.alarm.clickatell/blob/7c623213ea6c0f27d9516a3fc22c4cf6e7b65346/src/main/test/java/biz/dfch/j/clickatell/rest/ClickatellClientTest.java#L33).
 
 You can [download the binary](https://drone.io/github.com/dfch/biz.dfch.j.graylog.plugin.alarm.clickatell/files) [![Build Status](https://drone.io/github.com/dfch/biz.dfch.j.graylog.plugin.alarm.clickatell/status.png)](https://drone.io/github.com/dfch/biz.dfch.j.graylog.plugin.alarm.clickatell/latest) at our [drone.io](https://drone.io/github.com/dfch) account.
 
