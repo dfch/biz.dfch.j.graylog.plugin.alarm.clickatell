@@ -155,7 +155,7 @@ public class dfchBizClickatellAlarm implements AlarmCallback
 
         configurationRequest.addField(new TextField(
                         CONFIG_FIELDS, "Fields to send in short message", "",
-                        "Comma separated list of fields to send as message text, eg <message>, <id>, <timestamp>, <stream> or user defined fields. Built-in fields have to be surrounded by '<>'",
+                        "Comma separated list of fields to send as message text, eg <message>, <id>, <timestamp>, <source>, <stream> or user defined fields. Built-in fields have to be surrounded by '<>'",
                         ConfigurationField.Optional.OPTIONAL)
         );
 
