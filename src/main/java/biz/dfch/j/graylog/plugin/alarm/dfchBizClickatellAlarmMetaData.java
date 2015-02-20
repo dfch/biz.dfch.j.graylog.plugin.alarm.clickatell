@@ -9,7 +9,12 @@ import java.util.Collections;
 import java.util.Set;
 
 /**
- * Implement the PluginMetaData interface here.
+ *
+ * @author Ronald Rink
+ * @version 1.0.0
+ * @since 2015-02-19 
+ *
+ * This class defines the metadata of the plugin which is visible via System | Node | Details | Installed Plugins
  */
 public class dfchBizClickatellAlarmMetaData implements PluginMetaData 
 {

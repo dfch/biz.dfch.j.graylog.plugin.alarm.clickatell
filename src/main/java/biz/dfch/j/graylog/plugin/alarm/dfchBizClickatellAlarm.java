@@ -31,8 +31,14 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
+ *  
+ * @author Ronald Rink
+ * @version 1.0.0
+ * @since 2015-02-19
+ *  
  * This is the plugin. Your class should implement one of the existing plugin
  * interfaces. (i.e. AlarmCallback, MessageInput, MessageOutput)
+ *  
  */
 public class dfchBizClickatellAlarm implements AlarmCallback
 {
@@ -53,12 +59,16 @@ public class dfchBizClickatellAlarm implements AlarmCallback
     List<String> fields;
     ClickatellClient clickatellClient;
 
+    /**
+     * This method is called by Graylog when the plugin is executed the first time (as a result of an alert condition).
+     * @param configuration The Configuration object containing the settings the user specified when create the plugin instance.
+     * @throws AlarmCallbackConfigurationException This exception is thrown when an incomplete or invalid combination of configuration settings has been specified.
+     * @see #getRequestedConfiguration()
+     */
     @Override
-    public void initialize(final Configuration configuration) throws AlarmCallbackConfigurationException
-    {
-        try
-        {
-            LOG.info("Verifying configuration ...");
+    public void initialize(final Configuration configuration) throws AlarmCallbackConfigurationException {
+        try {
+            LOG.debug("Verifying configuration ...");
             
             this.configuration = configuration;
 
@@ -102,7 +112,7 @@ public class dfchBizClickatellAlarm implements AlarmCallback
 
             LOG.info("Verifying configuration SUCCEEDED.");
 
-            LOG.info("Connecting to Clickatell ...");
+            LOG.debug("Connecting to Clickatell ...");
 
             clickatellClient = new ClickatellClient(configAuthToken);
             AccountBalanceResponse accountBalanceResponse = clickatellClient.getBalance();
@@ -111,7 +121,7 @@ public class dfchBizClickatellAlarm implements AlarmCallback
             {
                 CoverageResponse coverageResponse = clickatellClient.getCoverage(recipient);
                 if(!coverageResponse.getData().isRoutable()) {
-                    LOG.error(String.format("Sending message to '%s' is outside coverage.", recipient));
+                    LOG.error(String.format("Sending message to '%s' is outside coverage. No message will be sent to this recipient.", recipient));
                 }
             }
             LOG.info("Connecting to Clickatell SUCCEEDED.");
@@ -293,7 +303,7 @@ public class dfchBizClickatellAlarm implements AlarmCallback
             }
             if(0 < maxLength && maxLength < sb.length())
             {
-                LOG.warn(String.format("CONFIG_MAX_LENGTH: Generated message contains '%d' characters and exceeds configured maximum of '%d' characters. Shortening message ...", sb.length(), maxLength));
+                LOG.warn(String.format("CONFIG_MAX_LENGTH: Generated message contains '%d' characters and exceeds configured maximum of '%d' characters. Truncating message ...", sb.length(), maxLength));
                 sb.setLength(maxLength);
             }
 
